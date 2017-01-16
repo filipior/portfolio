@@ -8,13 +8,13 @@
 }
 
 body {
-	background-color: #FFF;
+	background-color: #555555;
 	font-family: Arial, sans-serif;
 }
 
-@media (max-width: 600px) {
+	// MOBILE ----------------------------------
 
-	// HEADER I NAWIGACJA MOBILNA
+@media (min-width: 320px) {
 
 	.top {
 		height: 85px;
@@ -24,19 +24,19 @@ body {
 		justify-content: space-between;
 		align-items: center;
 		padding: 10px;
-	}
-
-	.socialIcons {
-		// display: none;
+		transition: height 0.5s;
 	}
 
 	.logo {
 		width: 60px;
 		height: 60px;
 		border: 1px solid black;
-		background-image: url(../img/logo.svg);	
+		background-image: url(../img/logo.svg);
+		background-size: 80%;	
 		background-repeat: no-repeat;
+		background-position: center;
 		cursor: pointer;
+		transition: width 0.5s, height 0.5s, margin-left 0.5s; 
 	}
 
 	.hamburgerMenu {
@@ -54,6 +54,7 @@ body {
 		height: 500px;
 		background: #FFFFFF;
 		border-top: 1px solid #999999;
+		display: none;
 	}
 
 	.menuItem {
@@ -77,18 +78,20 @@ body {
 		margin-bottom: 30px;
 	}
 
-	// POCZĄTEK SEKCJI Z CONTENTEM //
+	.socialIcons {
+		display: none;
+	}
+
+	// POCZĄTEK SEKCJI Z CONTENTEM ----------------------------------//
 
 	@keyframes onHoverIn { 
-    	0%{background-position:0% 49%}
-    	50%{background-position:49% 100%}
+    	0%{background-position:0%}
    		100%{background-position:100%}
    	}
 
    	@keyframes onHoverOut { 
     	0%{background-position:100%}
-    	50%{background-position:49% 100%}
-   		100%{background-position:0% 49%}
+   		100%{background-position:0%}
    	}
 
 	.coverOnHover {
@@ -100,12 +103,12 @@ body {
 		width: 100%;
 		height: 310px;
 		background: linear-gradient(135deg, #161715 0%,#161715 35%,#9cb4c4 60%,#eef1aa 100%,#eef1aa 100%);
-		background-size: 600% 600%;
+		background-size: 300% 300%;
 		display: flex;
 		align-items: center;
+		justify-content: space-around;
 		color: white;
 		text-align: center;
-		padding: 10px;
 		margin-bottom: 1px;
 		transition: height 0.5s ease-in-out;
 	}
@@ -113,10 +116,7 @@ body {
 	.cover:hover {
 		height: 400px;
 		animation-name: onHoverIn;
-		animation-duration: 1s;
-		animation-fill-mode: both;
-		animation-direction: alternate;
-		background-position:100%;
+		background-position: 100%;
 
 		.title {
 			color: #161715;
@@ -146,5 +146,166 @@ body {
 	.description {
 		font-size: 18px;
 		color: #babbba;
+	}
+}
+
+// STYLE DLA TABLET PION ----------------------------------
+
+@media (min-width: 600px) {
+
+	.top {
+		height: 120px;
+		width: 100%;
+		background-color: #FFF;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px;
+		transition: height 0.5s;
+	}
+
+	.logo {
+		width: 75px;
+		height: 75px;
+		margin-left: 25px;
+		border: 1px solid black;
+		background-image: url(../img/logo.svg);	
+		background-repeat: no-repeat;
+		background-size: 80%;
+		background-position: center;
+		cursor: pointer;
+		transition: width 0.5s, height 0.5s, margin-left 0.5s; 
+	}
+
+	.hamburgerMenu {
+		display: none;
+	}
+
+	.hamburgerMenuOpen {
+		width: 100%;
+		height: 500px;
+		background: #FFFFFF;
+		border-top: 1px solid #999999;
+		display: none;
+	}
+
+	.socialIcons {
+		display: inline;
+		margin-right: 25px;
+	}
+}
+
+// STYLE DLA TABLET POZIOM ----------------------------------
+
+@media (min-width: 780px) {
+
+	.coverContainer {
+		width: 100%;
+		height: calc(100vh - 120px);
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.cover {
+		width: calc(50% - 1px);
+		height: calc(50vh - 60px);
+		background: linear-gradient(135deg, #161715 0%,#161715 35%,#9cb4c4 60%,#eef1aa 100%,#eef1aa 100%);
+		background-size: 300% 300%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		color: white;
+		text-align: center;
+		margin-bottom: 1px;
+		margin-left: 1px;
+		padding: 50px;
+	}
+
+	.cover:hover {
+		
+		height:  calc(50vh - 60px);
+		animation-name: onHoverIn;
+		background-position: 100%;
+
+		.title {
+			color: #161715;
+			transition: color 0.5s ease-in-out;
+		}
+
+		.description {
+			color: #161715;
+			transition: color 0.5s ease-in-out;
+		}
+	}
+}
+
+
+// STYLE DLA DESKTOP ----------------------------------
+
+@media (min-width: 1080px) {
+
+	.top {
+		height: 170px;
+		width: 100%;
+		background-color: #FFF;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px;
+		transition: height 0.5s;
+	}
+
+	.logo {
+		width: 95px;
+		height: 95px;
+		margin-left: 25px;
+		border: 1px solid black;
+		background-image: url(../img/logo.svg);	
+		background-repeat: no-repeat;
+		background-size: 80%;
+		background-position: center;
+		cursor: pointer;
+		transition: width 0.5s, height 0.5s, margin-left 0.5s; 
+	}
+
+	.coverContainer {
+		width: 100%;
+		height: calc(100vh - 170px);
+		display: flex;
+		flex-wrap: nowrap;
+	}
+
+	.cover {
+		width: calc(25% - 1px);
+		height: calc(100vh - 170px);
+		background: linear-gradient(135deg, #161715 0%,#161715 35%,#9cb4c4 60%,#eef1aa 100%,#eef1aa 100%);
+		background-size: 300% 300%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		color: white;
+		text-align: center;
+		margin-bottom: 1px;
+		margin-left: 1px;
+		padding: 50px;
+		transition: width 0.5s ease-in-out;
+	}	
+
+	.cover:hover {
+		
+		width: 30%;
+		height: calc(100vh - 170px);
+		animation-name: onHoverIn;
+		background-position: 100%;
+
+		.title {
+			color: #161715;
+			transition: color 0.5s ease-in-out;
+		}
+
+		.description {
+			color: #161715;
+			transition: color 0.5s ease-in-out;
+		}
 	}
 }
