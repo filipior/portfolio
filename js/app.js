@@ -19,4 +19,14 @@ $(function () {
 
 	});
 
+	// zakładki
+
+	var closed = $(".coverClosed");
+	var active = $(".coverActive");
+
+	closed.on("click", function (event) {
+		active.removeClass("coverActive");
+		$(this).removeClass("coverClosed").addClass("coverActive");
+	})
+
 });

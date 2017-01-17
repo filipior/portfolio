@@ -10,6 +10,7 @@
 body {
 	background-color: #555555;
 	font-family: Arial, sans-serif;
+	// padding-top: 85px;
 }
 
 	// MOBILE ----------------------------------
@@ -25,12 +26,14 @@ body {
 		align-items: center;
 		padding: 10px;
 		transition: height 0.5s;
+		// position: fixed;
+	
 	}
 
 	.logo {
 		width: 60px;
 		height: 60px;
-		border: 1px solid black;
+		border: 1px solid #999999;
 		background-image: url(../img/logo.svg);
 		background-size: 80%;	
 		background-repeat: no-repeat;
@@ -42,7 +45,7 @@ body {
 	.hamburgerMenu {
 		width: 90px;
 		height: 35px;
-		border: 1px solid black;
+		border: 1px solid #999999;
 		line-height: 35px;
 		text-align: center;	
 		font-weight: bold;
@@ -127,6 +130,11 @@ body {
 			color: #161715;
 			transition: color 0.5s ease-in-out;
 		}
+
+		.smallLine {
+			background-color: #191919;
+			transition: color 0.5s ease-in-out;
+		}
 	}
 
 	.title {
@@ -155,12 +163,6 @@ body {
 
 	.top {
 		height: 120px;
-		width: 100%;
-		background-color: #FFF;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 10px;
 		transition: height 0.5s;
 	}
 
@@ -168,12 +170,6 @@ body {
 		width: 75px;
 		height: 75px;
 		margin-left: 25px;
-		border: 1px solid black;
-		background-image: url(../img/logo.svg);	
-		background-repeat: no-repeat;
-		background-size: 80%;
-		background-position: center;
-		cursor: pointer;
 		transition: width 0.5s, height 0.5s, margin-left 0.5s; 
 	}
 
@@ -183,15 +179,22 @@ body {
 
 	.hamburgerMenuOpen {
 		width: 100%;
-		height: 500px;
-		background: #FFFFFF;
-		border-top: 1px solid #999999;
-		display: none;
 	}
 
 	.socialIcons {
-		display: inline;
+		display: inline-block;
 		margin-right: 25px;
+		font-size: 20px;
+
+		.fa {
+			margin-left: 15px;
+		}
+		
+	}
+	
+	.description {
+		display: inline-block;
+		width: 350px;
 	}
 }
 
@@ -209,62 +212,35 @@ body {
 	.cover {
 		width: calc(50% - 1px);
 		height: calc(50vh - 60px);
-		background: linear-gradient(135deg, #161715 0%,#161715 35%,#9cb4c4 60%,#eef1aa 100%,#eef1aa 100%);
-		background-size: 300% 300%;
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		color: white;
-		text-align: center;
 		margin-bottom: 1px;
 		margin-left: 1px;
 		padding: 50px;
 	}
+	
+	.description {
+		display: inline-block;
+		width: 300px;
+	}
 
 	.cover:hover {
-		
 		height:  calc(50vh - 60px);
-		animation-name: onHoverIn;
-		background-position: 100%;
-
-		.title {
-			color: #161715;
-			transition: color 0.5s ease-in-out;
-		}
-
-		.description {
-			color: #161715;
-			transition: color 0.5s ease-in-out;
-		}
 	}
 }
 
 
 // STYLE DLA DESKTOP ----------------------------------
 
-@media (min-width: 1080px) {
+@media (min-width: 1200px) {
 
 	.top {
 		height: 170px;
 		width: 100%;
-		background-color: #FFF;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 10px;
-		transition: height 0.5s;
 	}
 
 	.logo {
 		width: 95px;
 		height: 95px;
 		margin-left: 25px;
-		border: 1px solid black;
-		background-image: url(../img/logo.svg);	
-		background-repeat: no-repeat;
-		background-size: 80%;
-		background-position: center;
-		cursor: pointer;
 		transition: width 0.5s, height 0.5s, margin-left 0.5s; 
 	}
 
@@ -289,6 +265,11 @@ body {
 		margin-left: 1px;
 		padding: 50px;
 		transition: width 0.5s ease-in-out;
+	}
+
+	.description {
+		display: inline-block;
+		width: 300px;
 	}	
 
 	.cover:hover {
@@ -305,7 +286,46 @@ body {
 
 		.description {
 			color: #161715;
+			display: inline-block;
+			width: 300px;
 			transition: color 0.5s ease-in-out;
 		}
+	}
+
+	.coverContainerActive {
+		width: 100%;
+		height: calc(100vh - 170px);
+		display: flex;
+		flex-wrap: nowrap;
+	}
+
+	.coverActive {
+		width: 75%;
+		height: calc(100vh - 170px);
+		background: linear-gradient(135deg, #9cb4c4, #eef1aa);
+		background-size: 300% 300%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		color: white;
+		text-align: center;
+		margin-bottom: 1px;
+		margin-left: 1px;
+		padding: 50px;
+		transition: width 0.5s ease-in-out;
+	}
+
+	.coverClosed {
+		width: 8.33%;
+		height: calc(100vh - 170px);
+		background-color: #161715;
+		color: #FFFFFF;
+	}
+
+	.rotated {
+		transform: rotate(90deg);
+		position: relative;
+		bottom: -75px;
+		
 	}
 }
