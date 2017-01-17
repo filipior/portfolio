@@ -2,7 +2,72 @@
 
 @import "style.scss";
 
-@media (min-width: 1200px) {
+@media (min-width: 100px) {
+
+    .top {
+        height: 85px;
+    }
+
+    .logo {
+        width: 60px;
+		height: 60px;
+    }
+
+    .accordion {
+		display: block;
+		width: 100%;
+		margin: 0 auto;
+		background-color: #161715;
+		overflow: auto;	
+	}
+
+	.accordion section {
+		
+		display: block;	
+		width: 100%;
+		height: 8vh;
+		color: #333;
+		background-color: #161715;
+		overflow: hidden;
+		border-right: 1px solid #999999;
+		transition: all 0.7s ease;
+
+		h2 {
+        margin: 0 auto;
+        text-align: center;
+		}
+
+		a {
+			color: white;
+			text-decoration: none;
+            font-size: 25px;
+            line-height: 8vh;
+            text-align: center;
+		}
+	}
+
+    .accordion section:target {
+		width: 100%;
+        height: calc(100vh - 85px);
+		background-color:  #9cb4c4;
+        overflow: scroll;
+     }  
+
+     .projectViewer {
+        height: 75vh;
+        background-size: 100%;
+        
+      
+        margin-bottom: 6em;
+
+        img {
+            width: 80%;
+        }
+    }
+}
+	
+
+@media (min-width: 900px) {
 
     .top {
         height: 85px;
@@ -37,12 +102,13 @@
 			position: absolute;
 			top: 3em;
 			transform: rotate(90deg);
-			font-size: 32px;
+			font-size: 30px;
 		}
 
 		a {
 			color: white;
 			text-decoration: none;
+            font-size: 30px;
 		}
 	}
 
@@ -50,6 +116,7 @@
 		width: 79%;
         height: auto;
 		background-color:  #9cb4c4;
+        overflow: hidden;
 
 		h2 {
 			position: absolute;
@@ -160,3 +227,4 @@
         }
     }
 }
+

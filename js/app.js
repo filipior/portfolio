@@ -19,7 +19,7 @@ $(function () {
 
 	});
 
-	// zakładki
+	// zakładki animacja gradientu
 
 	var closed = $(".coverClosed");
 	var active = $(".coverActive");
@@ -28,5 +28,16 @@ $(function () {
 		active.removeClass("coverActive");
 		$(this).removeClass("coverClosed").addClass("coverActive");
 	})
+
+	// górne menu 
+
+	// var menuLink = $(".menuLink");
+	// var hash = window.location.hash;
+
+	// menuLink.on("click", function (evet) {
+	// 	event.preventDefault();
+	// 	hash = link.attr("href");
+	// 	window.location = hash;
+	// })
 
 });

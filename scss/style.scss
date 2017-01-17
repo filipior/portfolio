@@ -174,7 +174,7 @@ body {
 	}
 
 	.hamburgerMenu {
-		display: none;
+		display: inline;;
 	}
 
 	.hamburgerMenuOpen {
@@ -182,7 +182,7 @@ body {
 	}
 
 	.socialIcons {
-		display: inline-block;
+		display: none;
 		margin-right: 25px;
 		font-size: 20px;
 
@@ -240,6 +240,20 @@ body {
 		height: 95px;
 		margin-left: 25px;
 		transition: width 0.5s, height 0.5s, margin-left 0.5s; 
+	}
+
+	.socialIcons {
+		display: inline-block;
+		margin-right: 25px;
+		font-size: 20px;
+
+		.fa {
+			margin-left: 15px;
+		}		
+	}
+
+	.hamburgerMenu {
+		display: none;
 	}
 
 	.coverContainer {
