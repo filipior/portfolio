@@ -29,6 +29,15 @@ $(function () {
 		$(this).removeClass("coverClosed").addClass("coverActive");
 	})
 
+	var links = $("h2 a");
+	links.on("click",function(event){
+		event.preventDefault();
+		$('section').removeClass('open');
+		var myId = $(this).attr("href");
+		$(myId).addClass("open");
+
+	})
+
 	// górne menu 
 
 	// var menuLink = $(".menuLink");
